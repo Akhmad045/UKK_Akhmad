@@ -36,11 +36,11 @@ class AdminController extends Controller
             ]);
             return redirect('dashboard');
         }
-
-            // cek apakah login valid
-        
             return back()->with('failed','Email atau password anda salah');
-        
+    }
 
+    public function logout(Request $request){
+        session()->flush();
+        return redirect('login');
     }
 }

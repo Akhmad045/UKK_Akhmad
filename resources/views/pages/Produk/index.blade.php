@@ -49,7 +49,7 @@
                                         <td>
                                             <div class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">Harga</p>
-                                                <h6 class="text-sm mb-0">Rp.{{ $item->harga }}</h6>
+                                                <h6 class="text-sm mb-0">Rp{{ $item->harga }}</h6>
                                             </div>
                                         </td>
                                         <td>

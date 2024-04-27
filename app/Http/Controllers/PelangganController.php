@@ -24,7 +24,7 @@ class PelangganController extends Controller
         ]);
         $p = new Pelanggan();
         $p->create($request->all());
-        if ($p->where('nama_pelanggan',$request->input('nama_pelanggan'))->where('nomor_telepon',$request->input('nomor_telepon'))->where('alamat',$request->input('alamat'))->exists()){
+        if ($p->where('nama_p12elanggan',$request->input('nama_pelanggan'))->where('nomor_telepon',$request->input('nomor_telepon'))->where('alamat',$request->input('alamat'))->exists()){
             return redirect('dashboard/pelanggan')->with('success', 'Data pelanggan berhasil ditambahkan!');
         }
             return back()->with('failed', 'Data pelanggan gagal ditambahkan!');

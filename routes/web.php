@@ -54,15 +54,17 @@ Route::get('dashboard/pelanggan/hapus/{id}',[PelangganController::class,'hapus']
 // Route Pelanggan //
 
 // Route Admin
-Route::get('dashboard/admin',[UserController::class,'index']);
+Route::get('dashboard/petugas',[UserController::class,'index']);
 
-Route::get('dashboard/admin/tambah',[UserController::class,'tambah']);
+Route::get('dashboard/petugas/tambah',[UserController::class,'tambah']);
 
-Route::post('dashboard/admin/tambah',[UserController::class,'kirim_tambah']);
+Route::post('dashboard/petugas/tambah',[UserController::class,'kirim_tambah']);
 
-Route::get('dashboard/admin/edit/{id}',[UserController::class,'edit']);
+Route::get('dashboard/petugas/edit/{id}',[UserController::class,'edit']);
 
-Route::post('dashboard/admin/edit/{id}',[UserController::class,'kirim_edit']);
+Route::post('dashboard/petugas/edit/{id}',[UserController::class,'kirim_edit']);
 
-Route::get('dashboard/admin/hapus/{id}',[UserController::class,'hapus']);
+Route::get('dashboard/petugas/hapus/{id}',[UserController::class,'hapus']);
 // Route Admin //
+
+Route::get('logout',[AdminController::class,'logout']);

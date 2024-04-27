@@ -27,16 +27,27 @@
                         <form class="ms-4" method="POST" >
                             @csrf
                             <div class="form-group">
-                                <label for="nama_pelanggan" class="form-control-label">Nama Pelanggan</label>
-                                <input class="form-control" value="{{ $item->nama_pelanggan }}" type="text" name="nama_pelanggan" id="nama_pelanggan" autofocus required>
+                                <label for="nama" class="form-control-label">Nama Lengkap</label>
+                                <input class="form-control" value="{{ $item->nama }}" type="text" name="nama" id="nama" autofocus required>
                             </div>
                             <div class="form-group">
-                                <label for="nomor_telepon" class="form-control-label">Nomor Telepon</label>
-                                <input class="form-control"  value="{{ $item->nomor_telepon }}" type="number" name="nomor_telepon" id="nomor_telepon" required>
+                                <label for="username" class="form-control-label">Username</label>
+                                <input class="form-control"  value="{{ $item->username }}" type="text" name="username" id="username" required>
                             </div>
                             <div class="form-group">
-                                <label for="example-url-input" class="form-control-label">Alamat</label>
-                                <textarea class="form-control" id="alamat" style="height: 100px" name="alamat">{{ $item->alamat }}</textarea>
+                                <label for="example-url-input" class="form-control-label">Email</label>
+                                <input class="form-control" type="email" name="email" id="email" required value="{{ $item->email }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="example-url-input" class="form-control-label">Password</label>
+                                <input class="form-control" type="password" name="password" id="password" required value="{{ $item->password }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="example-url-input" class="form-control-label">Akses</label>
+                                <select name="akses" id="akses" class="form-control">
+                                        <option {{ $item->akses=="admin"?"selected":"" }} value="admin">Admin</option>
+                                        <option {{ $item->akses=="petugas"?"selected":"" }} value="petugas">Petugas</option>
+                                </select>
                             </div>
 
                             <div class="form-group">

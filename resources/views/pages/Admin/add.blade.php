@@ -24,19 +24,30 @@
                     
     
                     <div class="col">
-                        <form class="ms-4" method="POST" action="{{ url('dashboard/pelanggan/tambah') }}">
+                        <form class="ms-4" method="POST" action="{{ url('dashboard/petugas/tambah') }}">
                             @csrf
                             <div class="form-group">
-                                <label for="nama_pelanggan" class="form-control-label">Nama Pelanggan</label>
-                                <input class="form-control" type="text" name="nama_pelanggan" id="nama_pelanggan" autofocus required>
+                                <label for="nama" class="form-control-label">Nama Lengkap</label>
+                                <input class="form-control" type="text" name="nama" id="nama" autofocus required>
                             </div>
                             <div class="form-group">
-                                <label for="nomor_telepon" class="form-control-label">Nomor Telepon</label>
-                                <input class="form-control" type="number" name="nomor_telepon" id="nomor_telepon" required>
+                                <label for="username" class="form-control-label">Username</label>
+                                <input class="form-control" type="text" name="username" id="username" required>
                             </div>
                             <div class="form-group">
-                                <label for="example-url-input" class="form-control-label">Alamat</label>
-                                <textarea class="form-control" id="alamat" style="height: 100px" name="alamat"></textarea>
+                                <label for="example-url-input" class="form-control-label">Email</label>
+                                <input class="form-control" type="email" name="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="example-url-input" class="form-control-label">Password</label>
+                                <input class="form-control" type="password" name="password" id="password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="example-url-input" class="form-control-label">Akses</label>
+                                <select name="akses" id="akses" class="form-control">
+                                        <option value="admin">Admin</option>
+                                        <option value="petugas">Petugas</option>
+                                </select>
                             </div>
 
                             <div class="form-group">

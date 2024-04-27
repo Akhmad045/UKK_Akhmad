@@ -21,7 +21,7 @@
         <div class="row mt-5">
             <div class="col">
                 <div class="d-flex justify-content-end">
-                    <a href="{{ url('dashboard/pelanggan/tambah') }}" class="btn btn-light active"><i
+                    <a href="{{ url('dashboard/petugas/tambah') }}" class="btn btn-light active"><i
                             class="bi bi-person-plus-fill"></i> Tambah Data</a>
                 </div>
                 <div class="card ">
@@ -41,29 +41,35 @@
                                                     {{ $item->id }}
                                                 </div>
                                                 <div class="ms-4">
-                                                    <p class="text-xs font-weight-bold mb-0">Nama Pelanggan</p>
-                                                    <h6 class="text-sm mb-0">{{ $item->nama_pelanggan }}</h6>
+                                                    <p class="text-xs font-weight-bold mb-0">Nama Lengkap</p>
+                                                    <h6 class="text-sm mb-0">{{ $item->nama }}</h6>
                                                 </div>
                                             </div>
                                         </th>
                                         <td>
                                             <div class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">Nomor Telepon</p>
-                                                <h6 class="text-sm mb-0">{{ $item->nomor_telepon }}</h6>
+                                                <p class="text-xs font-weight-bold mb-0">Username</p>
+                                                <h6 class="text-sm mb-0">{{ $item->username }}</h6>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">Alamat</p>
-                                                <h6 class="text-sm mb-0">{{ $item->alamat }}</h6>
+                                                <p class="text-xs font-weight-bold mb-0">Email</p>
+                                                <h6 class="text-sm mb-0">{{ $item->email }}</h6>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="text-center">
+                                                <p class="text-xs font-weight-bold mb-0">Akses</p>
+                                                <h6 class="text-sm mb-0">{{ $item->akses }}</h6>
                                             </div>
                                         </td>
                                         <td class="align-middle text-sm">
                                             <div class="col text-center">
                                                 <p class="text-xs font-weight-bold mb-0">Aksi</p>
-                                                <a href="{{ url('dashboard/pelanggan/edit/' . $item->id) }}"><i
+                                                <a href="{{ url('dashboard/petugas/edit/' . $item->id) }}"><i
                                                         class="bi bi-pencil-square"></i></a>
-                                                <a id="delete" href="{{ url('dashboard/pelanggan/hapus/' . $item->id) }}"><i
+                                                <a id="delete" href="{{ url('dashboard/petugas/hapus/' . $item->id) }}"><i
                                                         class="bi bi-trash"></i></a>
                                             </div>
                                         </td>

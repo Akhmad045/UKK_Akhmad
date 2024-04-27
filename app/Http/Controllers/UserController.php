@@ -17,16 +17,17 @@ class UserController extends Controller
     }
     public function kirim_tambah(Request $request) {
         $validated = $request->validate([
-            'nama_pelanggan' => 'required|max:255',
-            'nomor_telepon' => 'required|unique:pelanggans|max:15',
-            'alamat' => 'required|max:255',
+            'nama' => 'required|max:255',
+            'username' => 'required|unique:admins|max:100',
+            'email' => 'required|max:255',
+            'password' => 'required|max:255',
         ]);
         $p = new Admin();
         $p->create($request->all());
-        if ($p->where('nama_pelanggan',$request->input('nama_pelanggan'))->where('nomor_telepon',$request->input('nomor_telepon'))->where('alamat',$request->input('alamat'))->exists()){
-            return redirect('dashboard/pelanggan')->with('success', 'Data pelanggan berhasil ditambahkan!');
+        if ($p->where('nama',$request->input('nama'))->where('username',$request->input('username'))->where('email',$request->input('email'))->where('password',$request->input('password'))->exists()){
+            return redirect('dashboard/petugas')->with('success', 'Data petugas berhasil ditambahkan!');
         }
-            return back()->with('failed', 'Data pelanggan gagal ditambahkan!');
+            return back()->with('failed', 'Data petugas gagal ditambahkan!');
     }
 
     public function edit($id) {
@@ -36,12 +37,14 @@ class UserController extends Controller
 
     public function kirim_edit(Request $request) {
         $p = Admin::where('id',$request->id)->update([
-            'nama_pelanggan'=>$request->nama_pelanggan,
-            'nomor_telepon'=>$request->nomor_telepon,
-            'alamat'=> $request->alamat,
+            'nama'=>$request->nama,
+            'username'=>$request->username,
+            'email'=> $request->email,
+            'password'=> $request->password,
+            'akses'=> $request->akses,
         ]);
     
-            return redirect('dashboard/admin')->with('success', 'Data admin berhasil diupdate!');
+            return redirect('dashboard/petugas')->with('success', 'Data petugas berhasil diupdate!');
     }
 
     public function hapus($id) {
